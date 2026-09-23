@@ -14,18 +14,16 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <h1 class="page-title">Portfolio</h1>
+    <h1 class="page-title">Contact</h1>
      <main>
-        <div class="project">
-            <img src="sky.jpg" alt="Index">
-            <a href="index.html">Index</a>
-            <div class="project-details">
-                <p class="project-name">Project Name</p>
-                <p class="project-description">Project Description</p>
-            </div>
-
-             <div class="project-details">Learn More</div>
-        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" value="Submit">
      </main>
      <footer class="footer" >© 2023 Dane's Website| All Rights Reserved</footer> 
   </body>
