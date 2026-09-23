@@ -1,56 +1,65 @@
 :root {
-  /* variables */
   --cg-black: rgb(30, 32, 32);
   --cg-blue: rgb(36, 94, 255);
   --cg-grey: rgb(243, 243, 243);
   --cg-white: rgb(255, 255, 255);
+  --nav-height: 60px;
 }
 
+/* 1. ROOT SCROLL SNAPPING & SCROLLBAR HIDING */
 html {
   height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* ENABLES SNAP TO PAGES */
+  scroll-padding-top: var(--nav-height); /* PREVENTS HEADER FROM COVERING TITLES */
+  
+  /* Hides scrollbars cleanly */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 body {
   background: var(--cg-grey);
-  position: relative;
-  min-height: 100vh;
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-family: monospace;
 }
 
-/* CSS for navigation */
-
+/* 2. FIXED NAVBAR */
 .navbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 7%;
-  z-index: 10;
-
+  height: var(--nav-height);
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-
   background-color: var(--cg-black);
   color: var(--cg-white);
-  padding: 0px 0px;
+  box-sizing: border-box;
+}
 
-  /* Debug border */
-  /* border: solid red; */
+.logo a {
+  font-family: Georgia;
+  margin-left: 20px;
+  color: var(--cg-white);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .nav-list {
   display: flex;
   flex-direction: row;
-  position: relative;
-  right: 30px;
+  margin-right: 20px;
   list-style: none;
-
-  /* Debug border */
-  /* border: solid blue; */
+  padding: 0;
 }
 
 .navbar a {
@@ -58,9 +67,7 @@ body {
   font-weight: bold;
   margin: 0 12px;
   text-decoration: none;
-  letter-spacing: 2px;
-
-  font-family: monospace;
+  letter-spacing: 1px;
 }
 
 .navbar a:hover {
@@ -68,105 +75,50 @@ body {
   text-decoration: underline;
 }
 
-.navbar a:active {
-  color: var(--cg-blue);
-}
-
-.logo a {
-  font-family: Georgia;
-}
-
-.logo a:hover {
-  text-decoration: None;
-}
-
-main {
-  padding: 0 20px 40px 20px;
+/* 3. FULL SCREEN SECTIONS WITH SNAPPING */
+.page-section {
+  height: 100vh; /* FORCES FULL SCREEN SPACING FOR EACH PAGE */
+  scroll-snap-align: start; /* LOCKS PAGE TO TOP ON SCROLL */
+  scroll-snap-stop: always; /* PREVENTS FAST SCROLL SKIPPING */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .page-title {
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
+  font-size: 36px;
   font-family: Georgia;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-/* CSS for portfolio grid */
-
-.project {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  margin: 1em 0 2em 0;
-
-  /* Debug border */
-  /* border: 2px solid blue; */
-}
-
-.item-link {
-  width: 70%;
-
-  /* Debug border */
-  /* border: 2px solid red; */
-}
-
-.project-image {
-  object-fit: cover;
-  width: 100%;
-  height: 500px;
-  flex-basis: 50px;
-  flex-grow: 2;
-
-  /* Debug border */
-  /* border: 2px solid black; */
-}
-
-.project-details {
-  display: flex;
-  background-color: var(--cg-white);
-  width: 30%;
-  height: 500px;
-  flex-shrink: 1;
-  padding: 0 20px;
-  margin: 0px;
-  line-height: 1.5;
-  overflow: scroll;
-
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-
-  /* Debug border */
-  /* border: 2px solid green; */
-}
-
-.project-details a {
+/* 4. BOUNCING ARROW */
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
   color: var(--cg-black);
+  animation: bounce 2s infinite;
   text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
-.project-details a:hover {
-  color: var(--cg-blue);
-  text-decoration: underline;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
 }
 
-.project-details {
-  font-weight: lighter;
-}
-
-.project-name {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* CSS for home page */
-
+/* 5. ABOUT SECTION */
 .about {
   display: flex;
   align-items: center;
@@ -175,13 +127,16 @@ main {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  max-width: 700px;
+  width: 90%;
+  box-sizing: border-box;
 }
 
 .about-image img {
-  max-width: 300px;
+  width: 200px;
+  height: auto;
   border-radius: 3px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  display: block;
 }
 
 .about-text {
@@ -189,44 +144,73 @@ main {
   margin-left: 20px;
 }
 
-.about-text h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 .about-text p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
-/* CSS for resume page */
+/* 6. PORTFOLIO SECTION */
+.project {
+  display: flex;
+  flex-direction: row;
+  max-width: 750px;
+  width: 90%;
+  background-color: var(--cg-white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
 
-.button {
-  background-color: var(--cg-black);
-  border: none;
-  color: var(--cg-white);
+.project-image {
+  object-fit: cover;
+  width: 55%;
+  height: 320px;
+}
 
-  font-family: monospace;
-
-  padding: 5px 7px;
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-
-  border-radius: 2px;
+  width: 45%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.button:hover {
-  background-color: var(--cg-blue);
+.project-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.resume h2 {
-  font-family: Georgia;
+.project-description {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* CSS for contact form */
+.project-details a {
+  color: var(--cg-black);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.project-details a:hover {
+  color: var(--cg-blue);
+  text-decoration: underline;
+}
+
+/* 7. CONTACT FORM */
+form {
+  width: 100%;
+  max-width: 450px;
+}
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-family: Georgia;
   font-weight: bold;
 }
@@ -239,26 +223,39 @@ textarea {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   resize: none;
+  box-sizing: border-box;
 }
 
-/* Add some spacing to the form */
-form {
-  width: 500px;
-  margin: 0 auto;
+.button {
+  background-color: var(--cg-black);
+  border: none;
+  color: var(--cg-white);
+  font-family: monospace;
+  padding: 12px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-/* CSS for footer */
+.button:hover {
+  background-color: var(--cg-blue);
+}
 
+/* 8. FOOTER */
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--cg-black);
   color: var(--cg-white);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+  font-size: 12px;
 }

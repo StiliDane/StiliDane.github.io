@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Personal Website</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dane's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
   <body>
-    <!-- Navigation Bar -->
+    <!-- Fixed Navigation Bar -->
     <nav class="navbar">
       <h1 class="logo"><a href="#home">Dane's Website</a></h1>
       <ul class="nav-list">
@@ -16,70 +17,68 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    
-    <!-- This main container handles the scroll snapping -->
-    <main class="scroll-container">
-      
-        <!-- HOME SECTION -->
-        <section id="home" class="page-section">
-            <h1 class="page-title">Welcome</h1>
-            <p>Hi, my name is Dane. Welcome to my portfolio.</p>
-            
-            <!-- Moving Scroll Arrow -->
-            <a href="#about" class="scroll-arrow">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </a>
-        </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="page-section">
-            <h1 class="page-title">About Me</h1>
-            <div class="about">
-                <div class="about-image">
-                    <img src="sky.jpg" alt="A video of an image of the sky and clouds being too big">
-                </div>
-                <div class="about-text">
-                    <p>I'm a first year student at Cal Poly.</p>
-                    <p>I'm a computer science student and I am curious about machine learning and <em>game jams</em>.</p>
-                    <p>I have also done job shadowing for Coca-Cola</p>
-                </div>
-            </div>
-        </section>
+    <!-- Main Content Sections -->
+    <main>
+      <!-- HOME SECTION -->
+      <section id="home" class="page-section">
+        <h1 class="page-title">Welcome</h1>
+        <p>Hi, my name is Dane. Welcome to my portfolio.</p>
 
-        <!-- PORTFOLIO SECTION -->
-        <section id="portfolio" class="page-section">
-            <h1 class="page-title">Portfolio</h1>
-            <div class="project">
-                <img class="project-image" src="LaughLabCover.png" alt="A screenshot of the Laugh Lab game showing a player connecting to the host from their phone.">
-                <div class="project-details">
-                    <p class="project-name">Laugh Lab</p>
-                    <p class="project-description">Laugh Lab is a party game in which players connect to the host from their phones.</p>
-                    <br>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </section>
+        <!-- Moving Scroll Arrow -->
+        <a href="#about" class="scroll-arrow" aria-label="Scroll down">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </a>
+      </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="page-section">
-            <h1 class="page-title">Contact</h1>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-                
-                <input type="submit" value="Submit" class="button">
-            </form>
-        </section>
-        
-        <footer class="footer">© 2026 Dane's Website| All Rights Reserved</footer> 
+      <!-- ABOUT SECTION -->
+      <section id="about" class="page-section">
+        <h1 class="page-title">About Me</h1>
+        <div class="about">
+          <div class="about-image">
+            <img src="sky.jpg" alt="Sky background image" />
+          </div>
+          <div class="about-text">
+            <p>I'm a first year student at Cal Poly.</p>
+            <p>I'm a computer science student and I am curious about machine learning and <em>game jams</em>.</p>
+            <p>I have also done job shadowing for Coca-Cola.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO SECTION -->
+      <section id="portfolio" class="page-section">
+        <h1 class="page-title">Portfolio</h1>
+        <div class="project">
+          <img class="project-image" src="LaughLabCover.png" alt="Screenshot of Laugh Lab game" />
+          <div class="project-details">
+            <p class="project-name">Laugh Lab</p>
+            <p class="project-description">Laugh Lab is a party game in which players connect to the host from their phones.</p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="page-section">
+        <h1 class="page-title">Contact</h1>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <input type="submit" value="Submit" class="button" />
+        </form>
+
+        <footer class="footer">© 2026 Dane's Website | All Rights Reserved</footer>
+      </section>
     </main>
   </body>
 </html>
