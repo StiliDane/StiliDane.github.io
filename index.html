@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +27,16 @@
 
         <!-- Moving Scroll Arrow -->
         <a href="#about" class="scroll-arrow" aria-label="Scroll down">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M12 5v14M19 12l-7 7-7-7" />
           </svg>
         </a>
@@ -35,15 +44,37 @@
 
       <!-- ABOUT SECTION -->
       <section id="about" class="page-section">
-        <h1 class="page-title">About Me</h1>
-        <div class="about">
-          <div class="about-image">
-            <img src="sky.jpg" alt="Sky background image" />
+        <div class="about-container">
+          <!-- LEFT COLUMN -->
+          <div class="about-left">
+            <h1 class="main-heading">
+              <span class="highlight-white">FULL STACK</span>
+              <span class="highlight-gray">DEVELOPER</span>
+            </h1>
+
+            <p class="sub-note">Cal Poly Student</p>
+
+            <p class="about-description">
+              Passionate developer with a strong foundation in building modern,
+              scalable web applications and software systems. Focused on clean
+              architecture, intuitive user experiences, and continuous learning.
+            </p>
+
+            <div class="skills-pill-group">
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Python</span>
+            </div>
+
+            <div class="explore-callout">
+              <span>Explore my work below</span>
+              <a href="#portfolio" class="explore-arrow">&#8595;</a>
+            </div>
           </div>
-          <div class="about-text">
-            <p>I'm a first year student at Cal Poly.</p>
-            <p>I'm a computer science student and I am curious about machine learning and <em>game jams</em>.</p>
-            <p>I have also done job shadowing for Coca-Cola.</p>
+
+          <!-- RIGHT COLUMN (Intentionally left blank for next step) -->
+          <div class="about-right">
+            <!-- We will populate this next! -->
           </div>
         </div>
       </section>
@@ -52,10 +83,17 @@
       <section id="portfolio" class="page-section">
         <h1 class="page-title">Portfolio</h1>
         <div class="project">
-          <img class="project-image" src="LaughLabCover.png" alt="Screenshot of Laugh Lab game" />
+          <img
+            class="project-image"
+            src="LaughLabCover.png"
+            alt="Screenshot of Laugh Lab game"
+          />
           <div class="project-details">
             <p class="project-name">Laugh Lab</p>
-            <p class="project-description">Laugh Lab is a party game in which players connect to the host from their phones.</p>
+            <p class="project-description">
+              Laugh Lab is a party game in which players connect to the host
+              from their phones.
+            </p>
             <a href="#">Learn More</a>
           </div>
         </div>
@@ -77,7 +115,9 @@
           <input type="submit" value="Submit" class="button" />
         </form>
 
-        <footer class="footer">© 2026 Dane's Website | All Rights Reserved</footer>
+        <footer class="footer">
+          © 2026 Dane's Website | All Rights Reserved
+        </footer>
       </section>
     </main>
   </body>
