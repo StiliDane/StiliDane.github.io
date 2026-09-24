@@ -72,34 +72,242 @@
             </div>
           </div>
 
-          <!-- RIGHT COLUMN (Intentionally left blank for next step) -->
+          <!-- RIGHT COLUMN -->
           <div class="about-right">
-            <!-- We will populate this next! -->
+            <!-- Reserved for image/illustration -->
           </div>
         </div>
       </section>
 
       <!-- PORTFOLIO SECTION -->
       <section id="portfolio" class="page-section">
-        <h1 class="page-title">Portfolio</h1>
-        <div class="project">
-          <img
-            class="project-image"
-            src="LaughLabCover.png"
-            alt="Screenshot of Laugh Lab game"
-          />
-          <div class="project-details">
-            <p class="project-name">Laugh Lab</p>
-            <p class="project-description">
-              Laugh Lab is a party game in which players connect to the host
-              from their phones.
-            </p>
-            <a href="#">Learn More</a>
+        <!-- Header & Subtitle -->
+        <h1 class="page-title">Portfolio Showcase</h1>
+        <p class="portfolio-subtitle">
+          Explore my journey through projects, certifications, and technical
+          experience
+        </p>
+
+        <!-- Sliding Segmented Pill Bar Selector -->
+        <div class="tab-pill-bar">
+          <div class="pill-glider"></div>
+          <button class="pill-tab active" onclick="switchTab(0, this)">
+            Projects
+          </button>
+          <button class="pill-tab" onclick="switchTab(1, this)">
+            Certifications
+          </button>
+          <button class="pill-tab" onclick="switchTab(2, this)">
+            Tech Stack & Experience
+          </button>
+        </div>
+
+        <!-- TAB CONTENTS CONTAINER -->
+        <div class="tab-content-wrapper">
+          <!-- TAB 1: PROJECTS -->
+          <div class="tab-pane active" id="pane-projects">
+            <div class="projects-list">
+              <!-- Project 1: Laugh Lab -->
+              <div class="project">
+                <img
+                  class="project-image"
+                  src="LaughLabCover.png"
+                  alt="Screenshot of Laugh Lab game"
+                />
+                <div class="project-details">
+                  <p class="project-name">Laugh Lab</p>
+                  <p class="project-description">
+                    Laugh Lab is a party game in which players connect to the
+                    host from their phones.
+                  </p>
+                  <a
+                    href="https://editor.p5js.org/dstilinovich4315-alt/full/Tde2Suba1"
+                    >Learn More &rarr;</a
+                  >
+                </div>
+              </div>
+
+              <!-- Project 2: Game Jam -->
+              <div class="project">
+                <img
+                  class="project-image"
+                  src="GameShowMadnessCover.png"
+                  alt="Screenshot of Game Jam project"
+                />
+                <div class="project-details">
+                  <p class="project-name">Game Jam Project</p>
+                  <p class="project-description">
+                    Handled full-cycle game jam production from concept to
+                    itch.io build, balancing system design, UI integration,
+                    camera physics, and playtesting within 72 hours.
+                  </p>
+                  <a href="https://buddyandbob.itch.io/game-show-madness"
+                    >Learn More &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: CERTIFICATIONS -->
+          <div class="tab-pane" id="pane-certifications">
+            <div class="certifications-grid custom-scrollbar">
+              <!-- Cert Box 1: Stanford Machine Learning -->
+              <div
+                class="cert-card"
+                onclick="
+                  openModal(
+                    'stanford-ml-preview.png',
+                    'Supervised Machine Learning: Regression and Classification',
+                    'Stanford University (Coursera)',
+                  )
+                "
+              >
+                <div class="cert-image-wrapper">
+                  <img
+                    src="stanford-ml-preview.png"
+                    alt="Certificate Preview"
+                    class="cert-image"
+                    onerror="this.src = 'AdvancedLearningAlgCert.jpg'"
+                  />
+                </div>
+                <div class="cert-info">
+                  <h3 class="cert-title">Supervised Machine Learning</h3>
+                  <p class="cert-issuer">Stanford University (Coursera)</p>
+                  <span class="cert-zoom-hint">Click to enlarge 🔍</span>
+                </div>
+              </div>
+
+              <!-- Cert Box 2: Stanford Advanced Learning Algorithms -->
+              <div
+                class="cert-card"
+                onclick="
+                  openModal(
+                    'stanford-advanced-ml-preview.png',
+                    'Advanced Learning Algorithms',
+                    'Stanford University (Coursera)',
+                  )
+                "
+              >
+                <div class="cert-image-wrapper">
+                  <img
+                    src="stanford-advanced-ml-preview.png"
+                    alt="Certificate Preview"
+                    class="cert-image"
+                    onerror="this.src = 'AdvancedLearningAlgCert.jpg'"
+                  />
+                </div>
+                <div class="cert-info">
+                  <h3 class="cert-title">Advanced Learning Algorithms</h3>
+                  <p class="cert-issuer">Stanford University (Coursera)</p>
+                  <span class="cert-zoom-hint">Click to enlarge 🔍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: TECH STACK & EXPERIENCE -->
+          <div class="tab-pane" id="pane-techstack">
+            <div class="tech-exp-layout">
+              <!-- Experience / Career Column -->
+              <div class="experience-column custom-scrollbar">
+                <h3 class="pane-section-title">Work & Leadership</h3>
+
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <div>
+                      <h4 class="exp-role">Member / Developer</h4>
+                      <p class="exp-company">Hack4Impact (Cal Poly)</p>
+                    </div>
+                    <span class="exp-date">Current</span>
+                  </div>
+                  <p class="exp-desc">
+                    Collaborating with a team of student developers to build
+                    software solutions and web applications for nonprofits.
+                  </p>
+                </div>
+
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <div>
+                      <h4 class="exp-role">Lead Developer</h4>
+                      <p class="exp-company">MCOasis (Minecraft Event Co.)</p>
+                    </div>
+                    <span class="exp-date">2022 - Present</span>
+                  </div>
+                  <p class="exp-desc">
+                    Directing development efforts and utilizing Java, Spigot,
+                    and Bukkit to engineer custom server experiences and backend
+                    plugins.
+                  </p>
+                </div>
+
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <div>
+                      <h4 class="exp-role">IT Intern</h4>
+                      <p class="exp-company">Los Alamitos High School</p>
+                    </div>
+                    <span class="exp-date">Summer 2026</span>
+                  </div>
+                  <p class="exp-desc">
+                    Provided technical support, managed campus hardware, and
+                    maintained local IT infrastructure for faculty and students.
+                  </p>
+                </div>
+
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <div>
+                      <h4 class="exp-role">Backend Stream & Camera Mgr.</h4>
+                      <p class="exp-company">VRML</p>
+                    </div>
+                    <span class="exp-date">2023 - 2024</span>
+                  </div>
+                  <p class="exp-desc">
+                    Managed stream backends, live camera operations, and
+                    broadcast tools for virtual reality esports matches.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Tech Stack Skills Matrix Column -->
+              <div class="stack-column custom-scrollbar">
+                <h3 class="pane-section-title">Tech Stack</h3>
+
+                <div class="stack-group">
+                  <span class="stack-category">Core Languages</span>
+                  <div class="skills-pill-group">
+                    <span class="skill-pill">Java</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">C#</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">HTML / CSS</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <span class="stack-category">Game Dev & Minecraft</span>
+                  <div class="skills-pill-group">
+                    <span class="skill-pill">Spigot</span>
+                    <span class="skill-pill">Bukkit</span>
+                    <span class="skill-pill">Unity</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <span class="stack-category">Machine Learning & Data</span>
+                  <div class="skills-pill-group">
+                    <span class="skill-pill">TensorFlow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT  SECTION -->
+      <!-- CONTACT SECTION -->
       <section id="contact" class="page-section">
         <h1 class="page-title">Contact</h1>
         <form>
@@ -120,5 +328,70 @@
         </footer>
       </section>
     </main>
+
+    <!-- CERTIFICATE POPUP LIGHTBOX MODAL -->
+    <div id="certModal" class="modal-backdrop" onclick="closeModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModalDirect()">
+          &times;
+        </button>
+        <img
+          id="modalImage"
+          src=""
+          alt="Enlarged Certificate"
+          class="modal-image"
+        />
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalSubtitle" class="modal-subtitle"></p>
+      </div>
+    </div>
+
+    <!-- TAB SWITCHING & MODAL SCRIPT -->
+    <script>
+      function switchTab(index, btnElement) {
+        // Move sliding pill highlight glider
+        const glider = document.querySelector(".pill-glider");
+        glider.style.transform = `translateX(${index * 100}%)`;
+
+        // Update active tab buttons
+        const tabs = document.querySelectorAll(".pill-tab");
+        tabs.forEach((tab) => tab.classList.remove("active"));
+        btnElement.classList.add("active");
+
+        // Switch active tab pane
+        const panes = document.querySelectorAll(".tab-pane");
+        panes.forEach((pane) => pane.classList.remove("active"));
+        panes[index].classList.add("active");
+      }
+
+      function openModal(imgSrc, title, subtitle) {
+        const modal = document.getElementById("certModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalSubtitle = document.getElementById("modalSubtitle");
+
+        // Fallback for placeholder image if local file does not exist yet
+        modalImg.src = imgSrc;
+        modalImg.onerror = function () {
+          this.src =
+            "https://via.placeholder.com/800x500/121418/9DA4B0?text=Certificate+Full+View";
+        };
+
+        modalTitle.textContent = title;
+        modalSubtitle.textContent = subtitle;
+
+        modal.classList.add("open");
+      }
+
+      function closeModalDirect() {
+        document.getElementById("certModal").classList.remove("open");
+      }
+
+      function closeModal(event) {
+        if (event.target.id === "certModal") {
+          closeModalDirect();
+        }
+      }
+    </script>
   </body>
 </html>
